@@ -21,7 +21,9 @@ def topwords(renoted_id):
 
 
     fp = codecs.open(filepath, 'r', 'utf-8')
-
+    wiki=TextBlob(fp.read())
+    print wiki.noun_phrases
+    print wiki.ngrams(n=2)
     words = nltk.word_tokenize(fp.read())
 
 # Remove single-character tokens (mostly punctuation)
